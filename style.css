@@ -1,0 +1,107 @@
+body{
+    background-color: green;
+}
+.card{     
+    margin:120px auto;
+    height: 380px;
+    width: 250px;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: relative; /* el patrón debe ser relativo para que los internos puedan ser absoultos*/
+    
+    padding-top: 10px;
+    font-size: 180px; 
+
+    display: flex;              /*Centrado Vertical y Horizontal: usar FlexBox,*/
+    justify-content: center;
+    align-items: center;
+
+    
+    }
+      
+ .spade::before{
+    content: "\2660" ;
+    position: absolute; /*posision absoluta siempres está conectada al padre relativo mas cercano*/
+    top:1px;
+    left:10px;
+    font-size: 100px;} 
+
+ .spade::after{
+    content: "\2660";
+    position: absolute; 
+    bottom:1px;
+    right:10px;
+    font-size: 100px;
+    transform: rotate(180deg);}
+
+    .heart::before{
+        content: "\2665" ;
+        position: absolute; /*posision absoluta siempres está conectada al padre relativo mas cercano*/
+        top:1px;
+        left:10px;
+        font-size: 100px;
+        color: red;} 
+     
+     .heart::after{
+        content: "\2665";
+        position: absolute; 
+        bottom:1px;
+        right:10px;
+        font-size: 100px;
+        transform: rotate(180deg);
+        color: red;}
+
+   .club::before{
+        content: "\2663" ;
+        position: absolute;
+        top: 1px; 
+        left:10px;
+        font-size: 100px;} 
+     
+     .club::after{
+        content: "\2663";
+        position: absolute; 
+        bottom:1px;
+        right:10px;
+        font-size: 100px;
+        transform: rotate(180deg);}
+
+        .diamond::before{
+            content: "\2666" ;
+            position: absolute; 
+            top:1px;
+            left:10px;
+            font-size: 100px;
+            color: red;} 
+         
+         .diamond::after{
+            content: "\2666";
+            position: absolute; 
+            bottom:1px;
+            right:10px;
+            font-size: 100px;
+            transform: rotate(180deg);
+            color: red;}
+
+            
+
+              
+
+
+    /*&.spade:before,&.spade::after {content:"\u2660"}
+    &.club:before,&.club::after{content:"\u2663"}
+    &.heart::before,&.heart.after{content:"\u2665"}
+    &.diamond::before,&.diamond:after{content:"\u2666"}
+ window.onload = () => {
+    const cards = [ "A", 2,3,4,5,6,7,8,9,10,"J","Q","K"]
+    const palos = [ 'spade','heart','club','diamond']
+    
+    let number = document.querySelector('.number');
+    number.innerHTML = cards [Math.floor(Math.Random()*cards.lenght)];
+    number.classList = add(palos[Math.floor(Math.Random()*palos.lenght)]);
+    }
+
+ 
+    
